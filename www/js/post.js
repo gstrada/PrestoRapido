@@ -8,7 +8,7 @@ $(document).on('deviceready', function(){
                 type: 'POST',
                 data: postData,
                 // cargamos la url del servidor externo
-                url: 'http://209.126.127.32/~guilletest/creaSolicPago.php',
+                url: 'https://prestorapido.com.ar/creaSolicPago.php',
                 success: function(data){
                     console.log(data);
                     $('#usr_name').val('');
@@ -40,7 +40,7 @@ $(document).on('deviceready', function(){
                 type: 'POST',
                 data: postData,
                 // cargamos la url del servidor externo
-                url: 'http://209.126.127.32/~guilletest/grabaForm.php',
+                url: 'https://prestorapido.com.ar/creaSolicPago.php',
                 success: function(data){
                     console.log(data);
                     $('#usr_name_rec').val('');
