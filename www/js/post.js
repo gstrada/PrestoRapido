@@ -3,6 +3,7 @@ $(document).on('deviceready', function(){
 	$(function(){
 		$('#pagarMP').submit(function (){
 			var postData = $(this).serialize();
+			alert(postData);
 			$.ajax({
                 type: 'POST',
                 data: postData,
