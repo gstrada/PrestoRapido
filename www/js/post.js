@@ -19,7 +19,6 @@ $(document).on('deviceready', function(){
 					$('#usr_banco').val('');
 					$('#montodef').val('');
 					var dirURL = JSON.parse(data);
-					//alert(postData);
 					document.location.href = '#menu1';
 					var ref = window.open(dirURL, '_blank', 'location=yes');
 					ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
@@ -35,7 +34,6 @@ $(document).on('deviceready', function(){
 	   	});
 		
 		$('#datosContacto').submit(function(){
-            //var dataID = $(this).parent().attr('data-datos-id');
             var postData = $(this).serialize();
             $.ajax({
                 type: 'POST',
