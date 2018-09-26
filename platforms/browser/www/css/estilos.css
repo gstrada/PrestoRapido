@@ -1,0 +1,124 @@
+@charset "utf-8";
+.pant_inicio {
+	width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	position: fixed;
+	top:0; 
+	left:0;
+	background-color: #e74c3c;
+	clear: both;
+}
+.pant_menu {
+	width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	position: absolute;
+	top:0; 
+	left:0;
+	background-color: gainsboro;
+	clear: both;
+}
+#logo1 {
+	margin-top: 60%;
+	
+}
+#logo1 {
+	width: 0px;
+	height: 0px;
+}
+.img_logo1 {
+	width: 80%;
+	margin-left: 15%;
+}
+.color_h1 {
+    color: white;
+}
+.bkg_mnu {
+	background-image:url(../images/fdo_mnu.jpg)no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+.princ_mnu {
+	position: fixed;
+	width: 100%;
+	background: #273544 !important;
+}
+
+.buttons .ui-collapsible-collapsed > .ui-collapsible-toggle {
+       background-color: #273544 !important;
+}
+.buttons .ui-collapsible-collapsed {
+       background-color: #273544 !important;
+}
+.logo_header {
+width: 80%;
+height: 80%;
+min-width: 0%;
+min-height: 0%;
+max-width: 80%;
+max-height: 80%;
+}
+body {
+	background-color: gainsboro !important;
+}
+.div_princ_menu {
+	background-color: gainsboro;
+	margin-top: 15%;
+}
+.h6_menu {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	color: #273544;
+	text-align: center;
+}
+.icono_barras {
+	margin-left: 0px;
+}
+label {
+    width: 100%;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	color: #e74c3c;
+	font-weight:bolder;
+	font-size: 1.5em;
+    clear: both;
+	
+}
+.buttons {
+	background-color: #e74c3c !important;
+	border-radius: 10px !important;
+	border-color: #e74c3c!important;
+	font-family: 'Montserrat', sans-serif;
+	color:white !important;
+}
+#div_resultado {
+	display: none;
+}
+#resultado {
+    text-align: center;
+    font-weight: bold;
+}
+#advertencia {
+    text-align: center;
+    color: #e74c3c;
+}
+.footer-calc-li {
+    background: #e74c3c !important;
+    font-family: 'montserrat', sans-serif;
+    color: white !important;
+    font-weight: normal !important;
+    border-radius: 10px !important;
+}
+.datosPago {
+	text-align: center !important;
+}
+.submit-calc-li {
+    background: #e74c3c !important;
+    font-family: 'montserrat', sans-serif;
+    color: white !important;
+    font-weight: normal !important;
+    border-radius: 10px !important;
+}

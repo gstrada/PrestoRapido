@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ES-es">
+	<head>
+		<script language="JavaScript">
+			history.pushState(null, null, location.href);
+			window.onpopstate = function () {
+				history.go(1);
+			};
+		</script>
+		<meta charset="utf-8"/>
+		<meta http-equiv ="Cache-Control" content ="no-cache"/>
+		<!--<meta http-equiv="refresh" content="4; url=menu_init.php">-->
+        <meta name="viewport" content="initial-scale=1, width=device-width"> 
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+		</style>
+        <link href="css/bootstrap-4.0.0.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="JQueryMobile/jquery.mobile-1.4.5.min.css" />
+		<link href="css/estilos.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="js/bootstrap-4.0.0.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="JQueryMobile/jquery.mobile-1.4.5.min.js"></script>		
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+		<script type="text/javascript" src="js/render.js"></script>
+	</head>
+    <body onload="animate_logo(); onBodyLoad()">
+		<script type="text/javascript" src="js/post.js"></script>
+		<!-- Inicio de la primera página -->
+        <div data-role="page" id="inicio">
+            <div data-role="content" class="pant_inicio"> 
+                <div id="logo1" align="center">
+                    <img alt="logo1" src="images/logo1.png"/>			
+                </div>
+                <div id="logo2" align="center">
+                    <img alt="logo2" src="images/plata.png"/>			
+                </div>
+                <p><a href="#menu1" class="ui-btn buttons" data-transition="slide"></a>
+                </p>
+            </div><!-- /content -->
+
+        </div><!-- /page -->
+        <!-- Start of second page -->
+        <div data-role="page" id="menu1" class="pant_menu">
+            <div data-role="header" class="princ_mnu">
+                <a href="#" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext " data-transition="slidedown">Bars Icon</a>
+                <img class="img_logo1" alt="logo1" src="images/logo1.png"/>		
+            </div>
+            <div data-role="content" class="div_princ_menu" >
+                <p><h6 class="h6_menu">LA FORMA MAS FACIL Y RAPIDA DE TENER EL PRESTAMO QUE NECESITÁS...</h6></p>      
+                <a href="#calc" class="ui-btn buttons" data-transition="slideup">CALCULADORA DE CUOTAS</a>
+                <a href="#ctarj" class="ui-btn buttons" data-transition="slide">CON TARJETA DE CRÉDITO</a>
+                <a href="#crec" class="ui-btn buttons" data-transition="slideup">CON RECIBO DE SUELDO</a>
+                <a href="#ayuda" class="ui-btn buttons" data-transition="slideup">AYUDA</a>
+                <a href="#" class="ui-btn buttons" data-transition="slideup" onclick="showConfirm();return false;">SALIR</a>
+            </div><!-- /content -->
+        </div><!-- /page -->
+        <!-- Start of third page -->
+        <div data-role="page" id="calc" class="pant_menu">
+            <div data-role="header" class="princ_mnu">
+                <a href="#menu1" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext " data-transition="slidedown">Bars Icon</a>
+                <img class="img_logo1" alt="logo1" src="images/logo1.png"/>		
+            </div>
+            <div data-role="main" class="div_princ_menu" >
+                <div data-role="content" class="ui-content">
+                    <form method="post" action="#">
+                        <label>ELEGÍ EL MONTO...</label>
+                        <fieldset class="ui-field-contain" >
+                            <select name="monto" id="monto" required>
+								<option value=""></option>
+								<option value="1000">$ 1000</option>
+								<option value="1500">$ 1500</option>
+								<option value="2000">$ 2000</option>
+								<option value="2500">$ 2500</option>
+								<option value="3000">$ 3000</option>
+								<option value="3500">$ 3500</option>
+								<option value="4000">$ 4000</option>
+								<option value="4500">$ 4500</option>
+								<option value="5000">$ 5000</option>
+								<option value="5500">$ 5500</option>
+								<option value="10000">$ 10000</option>
+								<option value="15000">$ 15000</option>
+								<option value="20000">$ 20000</option>
+								<option value="25000">$ 25000</option>
+								<option value="30000">$ 30000</option>
+								<option value="35000">$ 35000</option>
+								<option value="40000">$ 40000</option>
+                        	</select>
+                        </fieldset>
+                        <label>ELEGÍ LAS CUOTAS...</label>
+                        <fieldset class="ui-field-contain">
+                            <select name="monto" id="cuota">
+								<option value=""></option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="6">6</option>
+								<option value="12">12</option>
+								<option value="18">18</option>
+								<option value="24">24</option>	
+                            </select>
+                        </fieldset>
+                        <div class="ui-field-contain" id="div_resultado">
+                            <label> MONTO APROXIMADO DE TU CUOTA...</label>
+                            <input type="text" name="n_resultado" id="resultado" value="">
+                            <p id="advertencia">* El monto puede variar de acuerdo a la financiación</p>
+                        </div>
+                        <a class="ui-btn buttons" data-transition="slideup" onClick="calcular()" id="btn_calcular">CALCULAR</a>
+                    </form>
+                </div>
+            </div><!-- /content -->
+            <div data-role="footer">
+                <div data-role="navbar" id="footer-calc"> 
+                    <ul>
+                        <li><a href="#menu1" class="footer-calc-li" data-transition="slidedown">Inicio</a></li>
+                        <li><a href="#" class="footer-calc-li" onclick="showConfirm();return false;">Salir</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /page -->
+        <div data-role="page" id="ctarj" class="pant_menu">
+            <div data-role="header" class="princ_mnu">
+                <a href="#menu1" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext " data-transition="slidedown">Bars Icon</a>
+                <img class="img_logo1" alt="logo1" src="images/logo1.png"/>		
+            </div>
+            <div data-role="main" class="div_princ_menu" >
+                <div data-role="content" class="ui-content">
+                    <form method="post" id="datos_pago">
+                        <label>Ingresá los datos a continuación: </label>
+                            <select name="montodef" id="montodef" required>
+								<option value="">Elegí el monto...</option>
+								<option value="1000">$ 1000</option>
+								<option value="1500">$ 1500</option>
+								<option value="2000">$ 2000</option>
+								<option value="2500">$ 2500</option>
+								<option value="3000">$ 3000</option>
+								<option value="3500">$ 3500</option>
+								<option value="4000">$ 4000</option>
+								<option value="4500">$ 4500</option>
+								<option value="5000">$ 5000</option>
+								<option value="5500">$ 5500</option>
+								<option value="10000">$ 10000</option>
+								<option value="15000">$ 15000</option>
+								<option value="20000">$ 20000</option>
+								<option value="25000">$ 25000</option>
+								<option value="30000">$ 30000</option>
+								<option value="35000">$ 35000</option>
+								<option value="40000">$ 40000</option>
+                        	</select>
+                        <input type="text" id="usr_name" placeholder="Apellido y Nombre" autocomplete="off" required class="datosPago"/>
+                        <input type="text" id="usr_dni" placeholder="N° de Documento" autocomplete="off" required class="datosPago"/>
+                        <input type="text" id="usr_tel" placeholder="N° de Teléfono" autocomplete="off" required class="datosPago"/>
+                        <input type="email" id="usr_mail" placeholder="Correo Electrónico" autocomplete="off" required class="datosPago"/>
+                        <input type="text" id="usr_cbu" placeholder="N° de CBU (para el depósito)" autocomplete="off" required minlength="22" maxlength="22" class="datosPago"/>
+                        <input type="text" id="usr_cuenta" placeholder="N° de Cuenta Bancaria" autocomplete="off" required class="datosPago"/>
+                        <input type="text" id="usr_banco" placeholder="Nombre del Banco" autocomplete="off" required class="datosPago"/>
+                        <a href="#iraMercadoPago" class="ui-btn buttons" id="btn_pagar" data-transition="slideup" onclick="llenaDatosMP()">SIGUIENTE</a>
+                    </form>
+                </div>
+            </div><!-- /content -->
+            <div data-role="footer">
+                <div data-role="navbar" id="footer-ctarj"> 
+                    <ul>
+                        <li><a href="#menu1" class="footer-calc-li" data-transition="slide">Inicio</a></li>
+                        <li><a href="#" class="footer-calc-li" onclick="showConfirm();return false;">Salir</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /page -->
+        <div data-role="page" id="crec" class="pant_menu">
+            <div data-role="header" class="princ_mnu">
+                <a href="#menu1" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext " data-transition="slidedown">Bars Icon</a>
+                <img class="img_logo1" alt="logo1" src="images/logo1.png"/>		
+            </div>
+            <div data-role="main" class="div_princ_menu" >
+                <div data-role="content" class="ui-content">
+                    <form action="grabaForm.php" method="post" name="datosContacto" id="datosContacto">
+                        <label>Cargá tus datos en el siguiente formulario: </label>
+                        <input type="text" name="usr_name_rec" id="usr_name_rec" placeholder="Apellido y Nombre" autocomplete="off" required class="datosPago"/>
+                        <input type="text" name="usr_cuil_rec" id="usr_cuil_rec" placeholder="N° de CUIL" autocomplete="off" required class="datosPago"/>
+                        <input type="text" name="usr_tel_rec" id="usr_tel_rec" placeholder="N° de Teléfono" autocomplete="off" required class="datosPago"/>
+                        <input type="email" name="email_rec" id="email_rec" placeholder="Correo Electrónico" autocomplete="off" required class="datosPago"/>
+                        <select name="tipoEmplead_rec" id="tipoEmplead_rec" required>
+                              <option value="">Tipo de empleo</option>
+                              <option value="empleado">Empleado (con recibo de sueldo)</option>
+                              <option value="autonomo">Autónomo (por cuenta propia)</option>
+                        </select>
+                        <input type="text" name="usr_empleador_rec" id="usr_empleador_rec" placeholder="Empleador" autocomplete="off" required  class="datosPago"/>
+                        <input type="text" name="usr_sueldo_rec" id="usr_sueldo_rec" placeholder="Ingresos Mensuales" autocomplete="off" required class="datosPago"/>
+                        <input type="text" name="usr_monto_rec" id="usr_monto_rec" placeholder="Monto del préstamo" autocomplete="off" required class="datosPago"/>
+                        <input type="text" name="usr_cuotas_rec" id="usr_cuotas_rec" placeholder="Cantidad de cuotas (hasta 48)" autocomplete="off" required class="datosPago"/>
+                        <input type="text" name="usr_destino_rec" id="usr_destino_rec" placeholder="Destino del préstamo" autocomplete="off" required class="datosPago"/>
+						<button type="submit" class="ui-btn buttons" id="btn_pagar2" data-transition="slideup" >SIGUIENTE</button>
+                	</form>
+                </div>
+            </div><!-- /content -->
+            <div data-role="footer">
+                <div data-role="navbar" id="footer-crec"> 
+                    <ul>
+                        <li><a href="#menu1" class="footer-calc-li" data-transition="slide">Inicio</a></li>
+                        <li><a href="#" class="footer-calc-li" onclick="showConfirm();return false;">Salir</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /page -->
+        <div data-role="page" id="iraMercadoPago" class="pant_menu">
+            <div data-role="header" class="princ_mnu">
+                <a href="#menu1" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext " data-transition="slidedown">Bars Icon</a>
+                <img class="img_logo1" alt="logo1" src="images/logo1.png"/>		
+            </div>
+            <div data-role="main" class="div_princ_menu" >
+                <div data-role="content" class="ui-content">
+                    <form method="post" id="pagarMP" name="pagarMP">
+                        <label>Verificá los datos ingresados</label>
+                        <label style="font-size: 0.75em !important">(para corregir volver a la pantalla anterior)</label>
+                        <input type="text" name="nomapellido" id="nomapellido" class="datosPago" readonly>
+                        <input type="text" name="numdoc" id="numdoc" class="datosPago" readonly>
+                        <input type="text" name="numtel" id="numtel" class="datosPago" readonly>
+                        <input type="email" name="dir_mail" id="dir_mail" class="datosPago" readonly>
+                        <input type="text" name="numcbu" id="numcbu"  class="datosPago" readonly>
+                        <input type="text" name="numcta" id="numcta" class="datosPago"  readonly>
+                        <input type="text" name="nombco" id="nombco" class="datosPago" readonly>
+                        <label>Monto a pagar</label>
+                        <label style="font-size: 0.75em !important">(la cantidad de cuotas serán las que te otorgue tu tarjeta de crédito)</label>
+						<input type="hidden" name="montoPedido" id="montoPedido" class="datosPago" readonly>
+                        <input type="text" name="totalPago" id="totalPago" class="datosPago" readonly>
+                        <button type="submit" class="ui-btn buttons" id="btn_pagar3" data-transition="slideup">PAGAR</button>
+                    </form>
+                </div>
+            </div><!-- /content -->
+            <div data-role="footer">
+                <div data-role="navbar" id="footer-iramp"> 
+                    <ul>
+                        <li><a href="#ctarj" class="footer-calc-li" data-transition="slidedown">Volver</a></li>
+                        <li><a href="#" class="footer-calc-li" onclick="showConfirm();return false;">Salir</a></li>
+						   
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /page -->
+		<div data-role="page" id="succrec" class="pant_menu">
+            <div data-role="header" class="princ_mnu">
+                <a href="#menu1" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext " data-transition="slidedown">Bars Icon</a>
+                <img class="img_logo1" alt="logo1" src="images/logo1.png"/>		
+            </div>
+            <div data-role="main" class="div_princ_menu" >
+                <div data-role="content" class="ui-content">
+                    <h6 class="h6_menu">Datos de contacto enviados, dentro de las siguientes 24 hs. hábiles nos pondremos en contacto con vos para analizar cual es la mejor alternativa para que tengas tu préstamo. </h6> 
+                </div>
+            </div><!-- /content -->
+            <div data-role="footer">
+                <div data-role="navbar" id="footer-succrec"> 
+                    <ul>
+                        <li><a href="#menu1" class="footer-calc-li" data-transition="slidedown">Inicio</a></li>
+                        <li><a href="#" class="footer-calc-li" onclick="showConfirm();return false;">Salir</a></li>
+						   
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /page -->
+		<div data-role="page" id="ayuda" class="pant_menu">
+            <div data-role="header" class="princ_mnu">
+                <a href="#menu1" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext " data-transition="slidedown">Bars Icon</a>
+                <img class="img_logo1" alt="logo1" src="images/logo1.png"/>		
+            </div>
+            <div data-role="main" class="div_princ_menu" >
+                <div data-role="content" class="ui-content">
+                    <div data-role="collapsible">
+						<h3>Préstamos con recibo de sueldo</h3>
+						<p>Si sos empleado en relación de dependencia y contás con recibo de sueldo tenemos un préstamo para vos. Llená el formulario de contacto y dentro de las 24 hs. siguientes nos comunicaremos para analizar tus posibilidades. Tené en cuenta que el interés es mayor mientras menor sea la cantidad solicitada.</p>
+					</div>
+					<div data-role="collapsible">
+						<h3>Préstamos con tarjeta de crédito</h3>
+						<p>Si tenes tarjeta de crédito podes acceder al instante al dinero que necesitas. Llená el formulario de solicitud con cuidado. Al aceptar el botón de pago se te redirigirá al sitio de Mercado Pago ® donde abonarás el préstamo con tu tarjeta y en la cantidad de cuotas que elijas. Una vez acreditado el pago se te depositará en la cuenta bancaria que hayas indicado el monto solicitado. Tené en cuenta que el interés es mayor mientras menor sea la cantidad solicitada. Asimismo, tu tarjeta de crédito puede cobrar un interés aparte del que te cobramos nosotros.</p>
+					</div>
+                </div>
+            </div><!-- /content -->
+            <div data-role="footer">
+                <div data-role="navbar" id="footer-ayuda"> 
+                    <ul>
+                        <li><a href="#menu1" class="footer-calc-li" data-transition="slideup">Inicio</a></li>
+                        <li><a href="#" class="footer-calc-li" onclick="showConfirm();return false;">Salir</a></li>
+						   
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /page -->
+	</body>
+</html>
